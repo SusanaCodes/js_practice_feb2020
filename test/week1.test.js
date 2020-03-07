@@ -11,7 +11,7 @@ const {
   simpleFizzBuzz
 } = require("../challenges/week1");
 
-describe.only("capitalize", () => {
+describe("capitalize", () => {
   test("returns a capitalized string", () => {
     expect(capitalize("hello")).toBe("Hello");
     expect(capitalize("the quick fox")).toBe("The quick fox");
@@ -65,7 +65,7 @@ describe("getSalePrice", () => {
   });
 });
 
-describe("getMiddleCharacter", () => {
+describe.only("getMiddleCharacter", () => {
   test("returns the middle character from a string of odd length", () => {
     expect(getMiddleCharacter("bears!!!!")).toBe("s");
   });

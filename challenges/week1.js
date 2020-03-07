@@ -1,29 +1,39 @@
 function capitalize(word) {
   if (word === undefined) throw new Error("word is required");
-  return word[0].toUpperCase()+word.substr(1);
+  return word[0].toUpperCase() + word.substr(1);
 }
 
 function generateInitials(firstName, lastName) {
   if (firstName === undefined) throw new Error("firstName is required");
   if (lastName === undefined) throw new Error("lastName is required");
-  // Add your code here!
+  return firstName[0] + " " + lastName[0];
 }
 
+  // only thing I could find to add the results as number and not as a string was putting the + symbol 
 function addVAT(originalPrice, vatRate) {
   if (originalPrice === undefined) throw new Error("originalPrice is requied");
   if (vatRate === undefined) throw new Error("vatRate is required");
-  // Add your code here!
+  let vat = originalPrice * (vatRate / 100);
+  addVAT = +originalPrice + +vat;
+  return addVAT;
 }
 
 function getSalePrice(originalPrice, reduction) {
   if (originalPrice === undefined) throw new Error("originalPrice is required");
   if (reduction === undefined) throw new Error("reduction is required");
-  // Add your code here!
+  let discount = originalPrice * (reduction / 100);
+  getSalePrice = +originalPrice - +reduction;
+  return getSalePrice;
 }
 
 function getMiddleCharacter(str) {
   if (str === undefined) throw new Error("str is required");
-  // Add your code here!
+  let middle = Math.floor(str.length / 2);
+  if (str.length % 2 === 0) {
+    return str[middle - 1] + str[middle];
+  } else {
+    return [middle];
+  }
 }
 
 function reverseWord(word) {
