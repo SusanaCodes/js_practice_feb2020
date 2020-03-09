@@ -9,22 +9,26 @@ function generateInitials(firstName, lastName) {
   return firstName[0] + " " + lastName[0];
 }
 
-  // only thing I could find to add the results as number and not as a string was putting the + symbol 
+// only thing I could find to add the results as number and not as a string was putting the + symbol 
 function addVAT(originalPrice, vatRate) {
   if (originalPrice === undefined) throw new Error("originalPrice is requied");
   if (vatRate === undefined) throw new Error("vatRate is required");
   let vat = originalPrice * (vatRate / 100);
-  addVAT = +originalPrice + +vat;
-  return addVAT;
+  let totalPrice = +originalPrice + +vat;
+  return Math.round(totalPrice * 100) / 100
 }
+
+
 
 function getSalePrice(originalPrice, reduction) {
   if (originalPrice === undefined) throw new Error("originalPrice is required");
   if (reduction === undefined) throw new Error("reduction is required");
   let discount = originalPrice * (reduction / 100);
-  getSalePrice = +originalPrice - +reduction;
-  return getSalePrice;
+  let getSalePrice = +originalPrice - +discount;
+  return Math.round(getSalePrice *100) /100;
 }
+
+
 
 function getMiddleCharacter(str) {
   if (str === undefined) throw new Error("str is required");
@@ -32,14 +36,23 @@ function getMiddleCharacter(str) {
   if (str.length % 2 === 0) {
     return str[middle - 1] + str[middle];
   } else {
-    return [middle];
+    return str[middle];
   }
 }
 
+
+
 function reverseWord(word) {
   if (word === undefined) throw new Error("word is required");
-  // Add your code here!
+  let reversed = "";
+
+  for (var i = word.length - 1; i >= 0; i--) {
+    reversed += word[i];
+  }
+  return reversed;
 }
+
+
 
 function reverseAllWords(words) {
   if (words === undefined) throw new Error("words is required");
