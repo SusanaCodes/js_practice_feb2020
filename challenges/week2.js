@@ -1,26 +1,38 @@
 function getFillings(sandwich) {
   if (sandwich === undefined) throw new Error("ingredients is required");
-  // Your code here!
+  return sandwich.fillings;
 }
 
 function isFromManchester(person) {
   if (person === undefined) throw new Error("person is required");
-  // Your code here!
+  if (person.city === "Manchester") {
+    return true
+  }
+  return false
 }
 
 function getBusNumbers(people) {
   if (people === undefined) throw new Error("people is required");
-  // Your code here!
+  return Math.ceil(people/40);  //Math.ceil() round to up
 }
+
 
 function countSheep(arr) {
   if (arr === undefined) throw new Error("arr is required");
-  // Your code here!
+  let count = 0
+  for (let i = 0; arr.length > i; i++){
+    if (arr[i] === 'sheep'){
+      count++
+    }
+  } return count
 }
 
 function hasMPostCode(person) {
   if (person === undefined) throw new Error("person is required");
-  // Your code here!
+  if (person.address.postCode.charAt(0) === 'M' && person.address.city === 'Manchester'){
+    return true
+  }
+  return false
 }
 
 module.exports = {
