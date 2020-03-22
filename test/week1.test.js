@@ -87,7 +87,7 @@ describe("reverseWord", () => {
   });
 });
 
-describe.only("reverseAllWords", () => {
+describe("reverseAllWords", () => {
   test("reverses a single word in an array", () => {
     expect(reverseAllWords(["jest"])).toEqual(["tsej"]);
   });
@@ -135,7 +135,7 @@ describe("getMeanScore", () => {
   });
 });
 
-describe("simpleFizzBuzz", () => {
+describe.only("simpleFizzBuzz", () => {
   test("returns 'fizz' if the number is divisible by 3", () => {
     expect(simpleFizzBuzz(3)).toBe("fizz");
   });
