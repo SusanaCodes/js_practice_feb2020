@@ -1,13 +1,13 @@
-// function findSmallNums(nums) {
-//   if (!nums) throw new Error("nums is required");
-//   let smallNums= [];
-//   for (var i=0; i < nums.length; i++){
-//     if (nums <= 1){
-//       smallNums.push(i)
-//     }
-//     return smallNums;
-//   }
-// }
+function findSmallNums(nums) {
+  if (!nums) throw new Error("nums is required");
+  let smallNums= [];
+  for (var i=0; i < nums.length; i++){
+    if (nums <= 1){
+      smallNums.push(i)
+    }
+    return smallNums;
+  }
+}
 
 function findNamesBeginningWith(names, char) {
   if (!names) throw new Error("names is required");

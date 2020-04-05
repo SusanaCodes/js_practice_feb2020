@@ -9,16 +9,16 @@ function getSquares(nums) {
 }
 
 	
-// function camelCaseWords(words) { 
-//   if (words === undefined) throw new Error("words is required");
-//   let result = []
-//   const firstword = words(1).chargAt(0).toLowerCase()
-//   for (let i = 1; i < words.length; i++) {
-//     return string.charAt(0).toUpperCase() + string.slice(1); 
-//     // resul.push
-//   }
-//   // return firstWord + result.join("")
-// }
+function camelCaseWords(words) { 
+  if (words === undefined) throw new Error("words is required");
+  let result = []
+  const firstword = words(1).chargAt(0).toLowerCase()
+  for (let i = 1; i < words.length; i++) {
+    return string.charAt(0).toUpperCase() + string.slice(1); 
+    result.push
+  }
+  return firstWord + result.join("")
+}
 
 
 
