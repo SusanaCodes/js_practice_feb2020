@@ -1,60 +1,65 @@
 function getSquares(nums) {
   if (nums === undefined) throw new Error("nums is required");
-  let newnums = []
-  for (let i = 0; i < nums.length; i++) {
-    let newnums = nums(i) * nums(i)
-    newnums.push(i)
-  }
-  return newnums
-}
-
-	
-function camelCaseWords(words) { 
-  if (words === undefined) throw new Error("words is required");
   let result = []
-  const firstword = words(1).chargAt(0).toLowerCase()
-  for (let i = 1; i < words.length; i++) {
-    return string.charAt(0).toUpperCase() + string.slice(1); 
-    result.push
+  for (let i = 0; i < nums.length; i++) {
+    let n = nums[i] * nums[i];
+    result.push(n)
   }
-  return firstWord + result.join("")
-}
-
-
-
-
-function getTotalSubjects(people) {
-  if (people === undefined) throw new Error("people is required");
-  let result = 0;
-  people.forEach(people[i].subjects.length);
   return result;
 }
+
+
+function camelCaseWords(words) {
+  if (words === undefined) throw new Error("words is required");
+  let newArray = []
+  for (let i = 1; i < words.length; i++) {
+    const UpperCasedInitials = words[i].charAt(0).toUpperCase()
+    const remaining = words[i].slice(1)
+    newArray.push(UpperCasedInitials, remaining)
+  }
+  const firstWord = words[0].slice(0)
+  return firstWord + newArray.join("")
+}
+
+
 
 function getTotalSubjects(people) {
   if (people === undefined) throw new Error("people is required");
   let sum = 0;
   for (let i = 0; i < people.length; i++) {
-    const total = people[i].subjects.length
-    result = sum + total;
-  } return result
+    const result = people[i]['subjects'].length
+    sum = sum + result;
+  } return sum
 }
-  
 
 
-
-}
 
 function checkIngredients(menu, ingredient) {
   if (menu === undefined) throw new Error("menu is required");
   if (!ingredient) throw new Error("ingredient is required");
-  // Your code here!
+  for (let i = 0; i < menu.length; i++) {
+    if (menu[i]['ingredients'].includes(ingredient)) {
+      return true
+    }
+  }
+  return false
 }
+
+
 
 function duplicateNumbers(arr1, arr2) {
   if (arr1 === undefined) throw new Error("arr1 is required");
   if (arr2 === undefined) throw new Error("arr2 is required");
-  // Your code here!
+  let arr3 = [];
+  for (i = 0; i < arr2.length; i++) {
+    if (arr1.includes(arr2[i]))
+      arr3.push(arr2[i]);
+
+  }
+  let arr4 = arr3.sort();
+  return Array.from(arr4);
 }
+
 
 module.exports = {
   getSquares,
