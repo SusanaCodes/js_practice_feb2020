@@ -9,7 +9,7 @@ const {
   getLongestSides
 } = require("../challenges/week4");
 
-describe.only("findSmallNums", () => {
+describe("findSmallNums", () => {
   test("returns an array of numbers smaller than 1", () => {
     expect(findSmallNums([8, 1, 1.3, 0.9, 0.4, -1])).toEqual([0.9, 0.4, -1]);
     expect(findSmallNums([-7, -243])).toEqual([-7, -243]);
@@ -111,7 +111,7 @@ describe("getCities", () => {
   });
 });
 
-describe("getSquareRoots", () => {
+describe.only("getSquareRoots", () => {
   test("gets the square root of each number to 2 decimal places", () => {
     const nums = [36, 77, 12, 355, 92, 5];
     expect(getSquareRoots(nums)).toEqual([6, 8.77, 3.46, 18.84, 9.59, 2.24]);

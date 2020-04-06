@@ -46,19 +46,18 @@ function checkIngredients(menu, ingredient) {
 }
 
 
-
+// Array.from() method
 function duplicateNumbers(arr1, arr2) {
   if (arr1 === undefined) throw new Error("arr1 is required");
   if (arr2 === undefined) throw new Error("arr2 is required");
   let arr3 = [];
-  for (i = 0; i < arr2.length; i++) {
+  for (let i = 0; i < arr2.length; i++) {
     if (arr1.includes(arr2[i]))
       arr3.push(arr2[i]);
 
   }
-  let arr4 = arr3.sort();
-  return Array.from(arr4);
-}
+   return Array.from(new Set (arr3.sort()));
+ }
 
 
 module.exports = {
