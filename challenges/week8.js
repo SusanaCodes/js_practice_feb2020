@@ -10,32 +10,15 @@ const findNextNumber = (nums, n) => {
 
 
 
-// const count1sand0s = str => {
-//   if (str === undefined) throw new Error("str is required");
-//   let count0 = 0;
-//   let count1 = 0;
-//   for (let i = 0; i < str.length; i++) {
-//     if (str[i] === '0') {
-//       count0++;
-//     }
-//     else {
-//       count1++;
-//     }
-//   }
-//   return {
-//     'Zero': count0,
-//     'One': count1
-//   }
-// }
 
 const count1sand0s = str => {
   if (str === undefined) throw new Error("str is required");
-  let count0s = 0;  let count1s = 0;
+  let count0s = 0; let count1s = 0;
   str.split('').forEach((number) => {
     if (Number(number) === 0) {
       count0s++
     } else if (Number(number) === 1) {
-      count1s ++
+      count1s++
     }
   })
   return { 1: count1s, 0: count0s }
@@ -43,12 +26,12 @@ const count1sand0s = str => {
 
 
 
-
-
 const reverseNumber = n => {
   if (n === undefined) throw new Error("n is required");
-  // Your code here!
+  return Number(n.toString().split("").reverse().join(""))
 };
+
+
 
 const sumArrays = arrs => {
   if (arrs === undefined) throw new Error("arrs is required");
