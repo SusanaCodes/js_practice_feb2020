@@ -37,23 +37,26 @@ const reverseNumber = n => {
 const sumArrays = arrs => {
   if (arrs === undefined) throw new Error("arrs is required");
   return arrs.flat().reduce((a, b) => a + b, 0);
- };
- 
+};
+
 
 const arrShift = arr => {
   if (arr === undefined) throw new Error("arr is required");
-  if(arr.length >= 2){
-    [arr[0], arr[arr.length -1]] = [arr[arr.length -1], arr[0]]
-  } 
- return arr
+  if (arr.length >= 2) {
+    [arr[0], arr[arr.length - 1]] = [arr[arr.length - 1], arr[0]]
+  }
+  return arr
 };
 
 
 const findNeedle = (haystack, searchTerm) => {
   if (haystack === undefined) throw new Error("haystack is required");
   if (searchTerm === undefined) throw new Error("searchTerm is required");
-  // Your code here!
+    return Object.values(haystack).toString.toLowerCase().includes(searchTerm.toLowerCase())
 };
+
+
+
 
 const getWordFrequencies = str => {
   if (str === undefined) throw new Error("str is required");
