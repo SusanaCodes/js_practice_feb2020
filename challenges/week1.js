@@ -43,14 +43,8 @@ function getMiddleCharacter(str) {
 
 
 function reverseWord(word) {
-  if (word === undefined) throw new Error("word is required");
-  let reversed = "";
-
-  for (let i = word.length - 1; i >= 0; i--) {
-    reversed += word[i];
+  return word.split("").reverse().join("")
   }
-  return reversed;
-}
 
 
 function reverseAllWords(words) {
