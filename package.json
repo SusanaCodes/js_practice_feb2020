@@ -4,8 +4,8 @@
   "description": "A repository of JavaScript challenges for you to work on throughout the course",
   "main": "index.js",
   "scripts": {
-    "test":"jest test/week8",
-          "eslint": "eslint ./"
+    "test": "jest test/week9",
+    "eslint": "eslint ./"
   },
   "repository": {
     "type": "git",
@@ -23,4 +23,3 @@
     "jest": "^24.5.0"
   }
 }
-
