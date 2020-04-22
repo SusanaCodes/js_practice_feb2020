@@ -1,4 +1,4 @@
-const {sumMultiples,isValidDNA} = require("../challenges/week9");
+const {sumMultiples,isValidDNA,getComplementaryDNA,isItPrime} = require("../challenges/week9");
 
 describe("sumMultiples", () => {
     test ("it throws an error if not passed an array", () =>{
@@ -35,18 +35,53 @@ describe("sumMultiples", () => {
 
 describe("isValidDNA", () => {
     test("it returns false if string contains other than C, G, T or A", () => {
-        const result = isValidDNA("BCTV");
+        const result = isValidDNA("BCET");
         const expected = false;
         expect(result).toBe(expected);
     });
     test("it returns true if string contains C, G, T or A only", () => {
-        const result = isValidDNA("CGATCATGC");
+        const result = isValidDNA("CCGGTTAAATCATGC");
         const expected = true;
         expect(result).toBe(expected);
     });
-    test("it shouldn't be case sensitive", () => {
-        const result = isValidDNA("cagGTGaagtc");
+
+});
+
+describe("getComplementaryDNA", () => {
+    test("it returns GACT when passed CTGA", () => {
+        const result = getComplementaryDNA("CTGA");
+        const expected = "GACT";
+        expect(result).toEqual(expected)
+    });
+    test("it returns AGTC when passed TCAG", () => {
+        const result = getComplementaryDNA("TCAG");
+        const expected = "AGTC";
+        expect(result).toEqual(expected)
+    });
+});
+
+describe("isItPrime", () => {
+    test("it return  true if the number is prime", () => {
+        const result = isItPrime([7]);
         const expected = true;
         expect(result).toBe(expected);
     });
+    test("it return  true if the number is prime", () => {
+        const result = isItPrime([83]);
+        const expected = true;
+        expect(result).toBe(expected);
+    });
+
+    test("it return false if the number is not prime", () => {
+        const result = isItPrime([24]);
+        const expected = false;
+        expect(result).toBe(expected);
+    });
+
+    test("it return false if the number is not prime", () => {
+        const result = isItPrime([100]);
+        const expected = false;
+        expect(result).toBe(expected);
+    });
+
 });

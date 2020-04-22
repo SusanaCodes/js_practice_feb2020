@@ -27,15 +27,6 @@ const isValidDNA = str => {
   return /^[a,c,g,t,A,C,G,T]/.test(str);
 };
 
-// const isValidDNA = str => {
-//   let checkstr = str.toUpperCase();
-//   for (let i = 0; i < checkstr.length; i++) {
-//     if (checkstr[i] != "A" && checkstr[i] != "C" && checkstr[i] != "G" && checkstr[i] != "T")
-//       return false;
-
-//   }
-//   return true;
-// };
 
 
 /**
@@ -45,15 +36,34 @@ const isValidDNA = str => {
  */
 const getComplementaryDNA = str => {
   if (str === undefined) throw new Error("str is required");
+  const ComplementaryDNA = {T: 'A', A: 'T', C: 'G', G: 'C'};
+  return str.split('').map(x => ComplementaryDNA[x]).join('');
 };
+
 
 /**
  * This function should receive a number and return true/false depending on whether it is a prime number or not. A prime number is a number that can only be divided evenly by 1 and itself (for example, 7)
  * @param {Number} n
  * @returns {Boolean}
  */
+// const isItPrime = n => {
+//   if (n === undefined) throw new Error("n is required");
+//   if (n <= 1) return false; // negatives
+//   if (n% 2 == 0 && n > 2) return false; // even numbers
+//   let s = Math.sqrt(n); // store the square to loop faster
+//   for(let i = 3; i <= s; i++) { // start from 3, stop at the square, increment
+//       if(n % i === 0) return false; // modulo shows a divisor was found
+//   }
+//   return true;
+// };
+
 const isItPrime = n => {
   if (n === undefined) throw new Error("n is required");
+  for (i = 3; i < n; i++) {
+    if (n % i === 0) {
+      return false
+    }
+  } return true;
 };
 
 /**
