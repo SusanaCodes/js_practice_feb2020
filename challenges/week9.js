@@ -20,10 +20,23 @@ const sumMultiples = arr => {
  * This function will receive a string of characters and should return true/false depending on whether it is a valid DNA string. A valid DNA string may contain characters C, G, T or A only.
  * @param {String} str
  * @returns {Boolean}
+  ************TO USE /^    /.test(str); whenever you want to know whether a pattern is found in a string. Returns a boolean**********
  */
 const isValidDNA = str => {
   if (str === undefined) throw new Error("str is required");
+  return /^[a,c,g,t,A,C,G,T]/.test(str);
 };
+
+// const isValidDNA = str => {
+//   let checkstr = str.toUpperCase();
+//   for (let i = 0; i < checkstr.length; i++) {
+//     if (checkstr[i] != "A" && checkstr[i] != "C" && checkstr[i] != "G" && checkstr[i] != "T")
+//       return false;
+
+//   }
+//   return true;
+// };
+
 
 /**
  * This function will receive a valid DNA string (see above) and should return a string of the complementary base pairs. In DNA, T always pairs with A, and C always pairs with G. So a string of "ACTG" would have a complementary DNA string of "TGAC".
