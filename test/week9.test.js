@@ -1,4 +1,4 @@
-const {sumMultiples,isValidDNA,getComplementaryDNA,isItPrime,createMatrix} = require("../challenges/week9");
+const {sumMultiples,isValidDNA,getComplementaryDNA,isItPrime,createMatrix,areWeCovered} = require("../challenges/week9");
 
 describe("sumMultiples", () => {
     test ("it throws an error if not passed an array", () =>{
@@ -102,4 +102,38 @@ describe ("createMatrix", () => {
           ]);
         });
       })
+});
+
+describe("areWeCovered", () => {
+    test("it returns false if there are no staff at all", () => {
+        expect(areWeCovered([], "Sunday")).toBe(false);
+        expect(areWeCovered([], "Monday")).toBe(false);
+        expect(areWeCovered([], "Tuesday")).toBe(false);
+        expect(areWeCovered([], "Wednesday")).toBe(false);
+        expect(areWeCovered([], "Thrusday")).toBe(false);
+        expect(areWeCovered([], "Friday")).toBe(false);
+        expect(areWeCovered([], "Saturday")).toBe(false);
+    });
+    test("it returns false if there are staff but < 3 not scheduled to work", () => {
+        const staff = [
+            { name: "peter", rota: ["Monday", "Tuesday"] },
+            { name: "mary", rota: ["Monday", "Tuesday"] },
+            { name: "john", rota: ["Monday", "Tuesday"] },
+            { name: "julie", rota: ["Monday", "Tuesday"] }
+        ];
+        expect(areWeCovered(staff, "Wednesday")).toBe(false);
+        expect(areWeCovered(staff, "Saturday")).toBe(false);
+        expect(areWeCovered(staff, "Sunday")).toBe(false);
+    });
+    test("it returns true if there are 3 or more people working on the same day", () => {
+        const staff = [
+            { name: "peter", rota: ["Monday", "Tuesday"] },
+            { name: "mary", rota: ["Monday", "Tuesday"] },
+            { name: "john", rota: ["Monday", "Tuesday"] },
+            { name: "julie", rota: ["Monday", "Tuesday"] }
+        ]
+
+        expect(areWeCovered(staff, "Monday")).toBe(true);
+    }
+    )
 });
