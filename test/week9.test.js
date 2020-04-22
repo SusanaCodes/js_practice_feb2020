@@ -1,4 +1,4 @@
-const {sumMultiples,isValidDNA,getComplementaryDNA,isItPrime} = require("../challenges/week9");
+const {sumMultiples,isValidDNA,getComplementaryDNA,isItPrime,createMatrix} = require("../challenges/week9");
 
 describe("sumMultiples", () => {
     test ("it throws an error if not passed an array", () =>{
@@ -84,4 +84,22 @@ describe("isItPrime", () => {
         expect(result).toBe(expected);
     });
 
+});
+
+describe ("createMatrix", () => {
+    describe("createMatrix", () => {
+        test("receive a number and return an array of n arrays", () => {
+          expect(createMatrix(3, "foo")).toEqual([
+            ["foo", "foo", "foo"],
+            ["foo", "foo", "foo"],
+            ["foo", "foo", "foo"],
+          ]);
+          expect(createMatrix(4, "Hola")).toEqual([
+            ["Hola", "Hola", "Hola", "Hola"],
+            ["Hola", "Hola", "Hola", "Hola"],
+            ["Hola", "Hola", "Hola", "Hola"],
+            ["Hola", "Hola", "Hola", "Hola"],
+          ]);
+        });
+      })
 });
