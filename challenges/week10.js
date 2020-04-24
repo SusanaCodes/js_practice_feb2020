@@ -4,7 +4,15 @@
  */
 const sumDigits = n => {
   if (n === undefined) throw new Error("n is required");
+  let sum = 0;
+	let string = n.toString();
+	for(let i=0; i < string.length; i++){
+		sum = sum + parseInt(string.substring(i, i+1));
+	}
+	return sum;
 };
+
+
 
 /**
  * This function creates a range of numbers as an array. It received a start, an end and a step. Step is the gap between numbers in the range. For example, if start = 3, end = 11 and step = 2 the resulting range would be: [3, 5, 7, 9, 11]
