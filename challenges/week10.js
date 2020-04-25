@@ -2,16 +2,22 @@
  * This function takes a number, e.g. 123 and returns the sum of all its digits, e.g 6 in this example.
  * @param {Number} n
  */
+// const sumDigits = n => {
+//   if (n === undefined) throw new Error("n is required");
+//  let sum = 0;
+// 	let string = n.toString();
+// 	for(let i=0; i < string.length; i++){
+// 		sum = sum + parseInt(string.substring(i, i+1));
+// 	}
+// 	return sum;
+// };
+
+
+/**SHORTER!!! :)*/
 const sumDigits = n => {
   if (n === undefined) throw new Error("n is required");
-  let sum = 0;
-	let string = n.toString();
-	for(let i=0; i < string.length; i++){
-		sum = sum + parseInt(string.substring(i, i+1));
-	}
-	return sum;
+  return Array.from(String(n), Number).reduce((a, b) => a + b);
 };
-
 
 
 /**
@@ -22,10 +28,22 @@ const sumDigits = n => {
  * @param {Number} end
  * @param {Number} step
  */
+
+/* ---CHANGED TEST TO EQUAL FOR NOW---   Compared values have no visual difference. Note that you are testing for equality with the stricter `toBe` matcher using `Object.is`. For deep equality only, use `toEqual` instead. */
 const createRange = (start, end, step) => {
   if (start === undefined) throw new Error("start is required");
   if (end === undefined) throw new Error("end is required");
+  if (step === undefined) { step = 1 };
+  let result = []
+  for (let i = start; i < end + 1; i += step) {
+    result.push(i);
+  }
+  return result;
 };
+
+
+
+
 
 /**
  * This function takes an array of user objects and their usage in minutes of various applications. The format of the data should be as follows:
