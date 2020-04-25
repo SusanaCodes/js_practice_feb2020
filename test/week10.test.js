@@ -1,4 +1,4 @@
-const {sumDigits,createRange} = require ("../challenges/week10");
+const {sumDigits,createRange,getScreentimeAlertList} = require ("../challenges/week10");
 
 describe("sumDigits", () => {
     test("it returns the sum of all its digits", () => {
@@ -25,3 +25,50 @@ describe("createRange", () => {
     });
 
 });
+
+describe("getScreentimeAlertList", () => {
+    test(" it returns an array of usernames of users who have used more than 100 minutes of screentime for a given date", () => {
+        const user = [
+
+            {
+                username: "beth_1234",
+                name: "Beth Smith",
+                screenTime: [
+                    { date: "2019-05-01", usage: { twitter: 34, instagram: 22, facebook: 40 } },
+                    { date: "2019-05-02", usage: { twitter: 56, instagram: 40, facebook: 31 } },
+                    { date: "2019-05-03", usage: { twitter: 12, instagram: 15, facebook: 19 } },
+                    { date: "2019-05-04", usage: { twitter: 10, instagram: 56, facebook: 61 } },
+                    { date: "2019-06-01", usage: { twitter: 100, instagram: 56, facebook: 61 } },
+                ]
+            },
+            {
+                username: "sam_j_1989",
+                name: "Sam Jones",
+                screenTime: [
+                    { date: "2019-06-11", usage: { mapMyRun: 0, whatsApp: 0, facebook: 0, safari: 10 } },
+                    { date: "2019-06-13", usage: { mapMyRun: 0, whatsApp: 0, facebook: 0, safari: 16 } },
+                    { date: "2019-06-14", usage: { mapMyRun: 0, whatsApp: 0, facebook: 0, safari: 31 } },
+                    { date: "2019-06-01", usage: { mapMyRun: 0, whatsApp: 0, facebook: 0, safari: 101 } },
+                ]
+            },
+            {
+                username: "Rosita_2000",
+                name: "Rosa Perez",
+                screenTime: [
+                    { date: "2019-06-06", usage: { Pinterest: 40, whatsApp: 20, facebook: 0 } },
+                    { date: "2019-06-08", usage: { Pinterest: 20, whatsApp: 13, facebook: 0 } },
+                    { date: "2019-06-12", usage: { Pinterest: 0, whatsApp: 34, facebook: 0 } },
+                    { date: "2019-06-20", usage: { Pinterest: 234, whatsApp: 4, facebook: 0 } },
+                ]
+            },
+        ]
+
+        expect(getScreentimeAlertList(user, '2019-05-04')).toEqual(["beth_1234"]);
+        expect(getScreentimeAlertList(user, '2019-06-01')).toEqual(["beth_1234", "sam_j_1989"]);
+        expect(getScreentimeAlertList(user, '2019-06-13')).toEqual([]);
+        expect(getScreentimeAlertList(user, '2019-06-10')).toEqual([]);
+        expect(getScreentimeAlertList(user, '2019-06-20')).toEqual(["Rosita_2000"]);
+
+    });
+});
+   
