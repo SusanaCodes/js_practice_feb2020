@@ -83,15 +83,12 @@ const getScreentimeAlertList = (users, date) => {
     for (let j = 0; j < users[i].screenTime.length; j++) {
       let arr = Object.values(users[i].screenTime[j].usage);
       if (users[i].screenTime[j].date === date && (arr.reduce((a, b) => a + b) > 100)) {
-         username.push(users[i].username);
+        username.push(users[i].username);
       }
     }
   }
   return username;
 };
-
-
-
 
 
 
@@ -109,6 +106,11 @@ const getScreentimeAlertList = (users, date) => {
  */
 const hexToRGB = hexStr => {
   if (hexStr === undefined) throw new Error("hexStr is required");
+ let result = hexStr.replace(/^#?([a-f\d])([a-f\d])([a-f\d])$/i
+    , (m, r, g, b) => '#' + r + r + g + g + b + b)
+    .substring(1).match(/.{2}/g)
+    .map(x => parseInt(x, 16))
+    return "rgb("+result+")";
 };
 
 /**

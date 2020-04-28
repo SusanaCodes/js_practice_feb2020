@@ -1,4 +1,4 @@
-const {sumDigits,createRange,getScreentimeAlertList} = require ("../challenges/week10");
+const {sumDigits,createRange,getScreentimeAlertList,hexToRGB} = require ("../challenges/week10");
 
 describe("sumDigits", () => {
     test("it returns the sum of all its digits", () => {
@@ -72,3 +72,14 @@ describe("getScreentimeAlertList", () => {
     });
 });
    
+describe ("hexToRGB", () => {
+    test("This function will receive a hexadecimal color code in the format #FF1133 and transform it into an RGB code", () => {
+        expect(hexToRGB("#FF1133")).toEqual("rgb(255,17,51)");
+        expect(hexToRGB("#0033ff")).toEqual("rgb(0,51,255)");
+        expect(hexToRGB("#FFFFFF")).toEqual("rgb(255,255,255)");
+        expect(hexToRGB("#00FF00")).toEqual("rgb(0,255,0)");
+        expect(hexToRGB("#C0C0C0")).toEqual("rgb(192,192,192)");
+        expect(hexToRGB("#000080")).toEqual("rgb(0,0,128)");
+        expect(hexToRGB("#03f")).toEqual("rgb(0,51,255)");
+    });
+});
