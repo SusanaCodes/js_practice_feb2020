@@ -1,4 +1,4 @@
-const {sumDigits,createRange,getScreentimeAlertList,hexToRGB} = require ("../challenges/week10");
+const {sumDigits,createRange,getScreentimeAlertList,hexToRGB,findWinner} = require ("../challenges/week10");
 
 describe("sumDigits", () => {
     test("it returns the sum of all its digits", () => {
@@ -81,5 +81,17 @@ describe ("hexToRGB", () => {
         expect(hexToRGB("#C0C0C0")).toEqual("rgb(192,192,192)");
         expect(hexToRGB("#000080")).toEqual("rgb(0,0,128)");
         expect(hexToRGB("#03f")).toEqual("rgb(0,51,255)");
+    });
+});
+
+describe("findWinner", () => {
+    test("It returns 'X' if player X has won", () => {
+        expect(findWinner([["X", "0", null], ["X", null, "0"],["X", null, "0"]])).toBe("X");
+    });
+    test("It returns '0' if player 0 has won", () => {
+        expect(findWinner([["0", "0", null],["0", null, "0"],["0", null, "0"]])).toBe("0")
+    });
+    test("It returns null if player 0 has won", () => {
+        expect(findWinner([["X", "0", null],["0", null, "0"],["0", null, "0"]])).toBe(null)
     });
 });
